@@ -1,0 +1,9 @@
+PUT http://localhost:8080/api/produtos/atualizar/18
+Content-Type: application/json
+
+{
+  "nome": "Asa de Frango",
+  "descricao":"Produto para exportação",
+  "qtdEstoque" : null,
+  "preco" : -1
+}

@@ -23,3 +23,11 @@ jobs:
       run: mvn -B package -DskipTests --file pom.xml
 
 
+    - name: Render GitHub Action
+      uses: Bounceapp/render-action@0.9.0
+      with:
+        service-id: srv-cr26v8rqf0us739nqdmg?key=CPyRkwBjApY
+        api-key: rnd_SLBw9GDEL1ePvt1a9ADf7p44kMp3
+              
+    
+

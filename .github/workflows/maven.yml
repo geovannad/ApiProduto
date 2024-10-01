@@ -27,4 +27,11 @@ jobs:
       with:
         service-id: srv-cr26v8rqf0us739nqdmg
         api-key: rnd_SLBw9GDEL1ePvt1a9ADf7p44kMp3
-              
+    - name: Deploy EC2
+        run: |
+          echo "${{secrets.KEY_EC2_JAVA}}" >private_key && chmod 400 "private_key" 
+          ssh -o StrictHostKeyChecking=no -i "private_key" ubuntu@ec2-44-213-235-105.compute-1.amazonaws.com "
+            cd /home/ubuntu/ApiProduto
+            git pull
+            mvn clean package -DskipTests
+            ./executar.sh "
